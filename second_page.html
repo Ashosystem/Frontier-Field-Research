@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Research & Development </title>
+    <link href="webbing.css" rel="stylesheet"/>
+    <style>
+    a:hover {
+      background-color: CornflowerBlue;
+<!--      font-size: 17px;-->
+    }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="menu">
+           <p class="heading">  <u>Research & Applications</u><br><br></p>
+        </div>
+
+        <div class="tab-container">
+          <div class="tab-list">
+            <button class="tab active" data-tab="tab1">HoloFuel: A Primer</button>
+            <button class="tab" data-tab="tab2">The Gulf Pivot - Notes</button>
+            <button class="tab" data-tab="tab3">The Idries Shah Library</button>
+            <button class="tab" data-tab="tab4">Portfolio</button>
+          </div>
+            <div class="tab-content scrollable" id="tab1">
+                <!-- Content for Holofuel: A Primer -->
+<!--                <br><a href="https://medium.com/@FF_Research/holofuel-a-primer-796eb72a1521" target="_blank">An introduction</a> to the concepts and problems motivating distributed ledger technologies.-->
+<!--                <br>&nbsp; &nbsp;The article focuses on the Holochain application framework, and the unique technological-->
+<!--                <br>&nbsp; &nbsp;opportunities it provides for peer-to-peer communication and coordination.-->
+<!--                <br><br>In this article we describe how the technology creates an internet <em>on the ground</em>,-->
+<!--                <br>whereby people make records that are private, yet verifiable and do not rely on third party systems.-->
+<!--                <br>-->
+                  <p> <b>1. What is HoloFuel?
+                  <br>2. How does it work?
+                  <br>3. What is the token used for?
+                  <br>4. How does supply work with HoloFuel and its intrinsic value?
+                  <br>5. What is the network used for?
+                  <br>6. What are some of the projects running on the network?
+                  <br>7. Who is behind it?
+                  <br>8. What is the community like?
+                  <br>9. How secure is the network?
+                  <br>10. What does HoloFuel represent as an investment?
+
+                 <br> <br>1. What is HoloFuel?</b>
+
+                 <br><br>HoloFuel is the first <em>currency</em> to be built with the <em>Holochain</em> distributed application framework.
+
+                 <br> <br>It is also the settlement currency used by app developers, to pay the hosts which serve their applications to end users on the web.
+
+                 <br> <br>In order to explore the system design of HoloFuel, we will need to discuss the system design of regular internet pages and networks. First we will talk about the <em>client-server</em> basis of the traditional internet and why distributed networks are different.
+
+                 <br> <br>With ordinary web sites, their contents need to be stored on a machine and made available to end users when they request it, by visiting a web page. These machines are called <em>‘Servers’</em>. They are often operated by the owners of the website. Alternatively, they are operated by another company which has been hired to provide the server on their behalf.
+
+                 <br> <br>If the server is switched off or tampered with, the website will no longer be accessible by the public. So anyone who wishes to gain, edit or prevent access to certain data needs only to target the server, or the company which operates the server, and the original data will be vulnerable.
+
+                 <br> <br>We are always relying on the integrity (technical, legal and ethical) of one specific party or another. Those parties become a target for interference because it's the most effective way to stop trust in the system. This is the problem of Centralisation in a nutshell.
+
+                <br> <br>The unique thing about the Holo project is that it consists of an open network of community-operated servers or ‘Holo-ports’.
+
+                Once certain phases of testing are complete, regular home devices will also be able to offer hosting capacity, alongside and beyond that of the Holo-ports. To put it simply, all spare computation power and network uptime is a candidate for being put to use in the Holo network.
+
+                <br> <br>Hosts are paid in HoloFuel for connecting end users to the variety of Holochain applications (<em>hApps</em>) available. These end users do not keep their own copy of the client or data, but rather engage with the content in the same way as a regular website. Hosts are paid for performing the service of connecting users with applications.
+
+                <br> <br>The Holo hosting network was designed to offer a distributed alternative to large centralised commercial server farms that host the majority of the websites and applications which we visit as users of the internet, such as Amazon Web Services or Microsoft Azure.
+                <br><br>
+                      <div style="display: flex; justify-content: space-around; font-family: monospace; white-space: pre;">
+<div>
+<h3></h3>
+<pre>    <b>Client/Server</b>
+
+     User       User
+         \     /
+          \   /
+           \ /
+          +---+
+ User-----|DB |-----User
+          +---+
+           / \
+          /   \
+         /     \
+     User       User
+</pre>
+</div>
+
+<div>
+
+
+<pre>       <b>Blockchain</b>
+
+      User    User
+         \    /
+        (Node)---(Node)
+        / |      | \
+   User   |      |  User
+          |      |
+        (Node)---(Node)
+         /        \
+      User        User
+</pre>
+</div>
+
+<div>
+
+<pre>
+     <b>Holochain</b>
+
+    User       User
+     &lt;----------&gt;
+    | ^\      /^ |
+    | | \    / | |
+    v v  \  /  v v
+          \/
+     ^ ^      ^ ^
+     | |  /\  | |
+     | | /  \ | |
+     | |/    \| |
+  User         User
+     &lt;----------&gt;
+</pre>
+</div>
+</div>
+
+
+                <br> <br><b>2. How does it work?</b>
+
+                <br> <br>Holochain is the application framework, built on the Rust programming language, and Holo is the server network that will support user activity. Note that many Blockchain nodes operate through the use of commercial server farms such as Amazon Web Services or Digital Ocean. This is contentious for networks which strive toward decentralisation, because the commercial providers represent a single point of failure. The Holo network, by contrast, is its own distributed server farm.
+
+                <br> <br>In order to make a transaction with HoloFuel, the recipient verifies the local chain of a sender and vice versa. Upon confirmation that the correct funds are in the sender’s balance, both parties commit an immutable record of the transaction to their local chains. HoloFuel requires no global ledger, nor a dedicated set of validators or miners which must ensure network integrity and be compensated for their intensive computation. Because of this, The amount of energy expended to perform the same task of sending funds is drastically lower than say the Bitcoin, Ethereum or Solana networks.
+
+                <br> <br>When a transaction has been finalised and recorded, a copy of this is published to the distributed hash table (DHT). A DHT is a distributed data base which holds the public information about all the events that have happened on the HoloFuel network. Think of each account within the database as a house on a street with a corresponding door number. Each household copies the public part of the data belonging to those in their neighbourhood. The entire HoloFuel database will comprise many of these neighbourhoods.
+
+                <br> <br>The sharing of public data means that even when the original source of a piece of data or transaction is offline, it will still be available to audit because these records will have saturated into the DHT through the sharing (gossip) of public source chain entries by neighbourhood participants.
+
+                <br> <br>With Holochain, data integrity is achieved locally and on demand — between those who create the data and their respective neighbours — rather than everywhere, all of the time. Instead of making everybody copy all of the data in the app, Holochain only requires gossip among those who interact with the data or those involved in producing it.
+
+                <br> <br>This seemingly innocent design feature belies the hidden enthymeme — that data is universal — independent of where and who it was created by. This is a fair assumption, however it is constructed on flawed principles.
+                <br> <br>It carries with it severe consequences for the nature and scalability of Blockchains and the applications they can support.
+
+                <br> <br>This form of data integrity is known as strong eventual consistency, and is an alternative to the global consensus protocols used in many Blockchains. By assuring that each new entry is in agreement with the monotonic addition rules, consensus among users about the content of DHT is guaranteed in advance. Put differently, data entries can only be stored when they are consistent with the rules.
+
+                <br> <br> Furthermore, because each user conducts their own validation, rather than relying on a specific class of network participants who perform this task, HoloFuel and Holochain applications are inherently scalable and capable of handling the throughput of a Facebook or Twitter user base.
+
+                 <br> <br><b>3. What is the token used for?</b>
+
+                <br> <br>HoloFuel’s primary use case is to support the micro transactions necessary to operate a distributed hosting service, which is hundreds of thousands a second, where hosts receive compensation for providing responsiveness to end-user requests. The currency will also be used for general purpose transactions and is open to integration with further hApps in the evolving ecosystem.
+
+                <br> <br><b>4. How does supply work with HoloFuel and its intrinsic value?</b>
+
+                <br> <br>HoloFuel is described as “value-stable not static” because one HoloFuel unit always redeems the median basket of hosting service. To give a simple metaphor, imagine a token that guarantees the user may redeem one pair of shoes from a shoe shop. As the range of shoes available in the shop expands the value of the token in the internal economy stays the same, however the value of the unit in Fiat terms will come to reflect this increasing redemption power.
+
+                <br> <br>Being a mutual credit currency, where every positive credit balance is offset by a negative debit, net supply of HoloFuel will always be zero. Supply is dynamically adjusting because HoloFuel reserves enable hosts to spend into the negative, with a credit limit set by an assessment of the hosting income earned in the prior three months.
+
+                <br> <br>When a host spends into the negative to pay a user with a positive balance, supply is increased. Likewise, when a host with a positive balance pays a user whose account is in the negative, supply is decreased. In this way HoloFuel supply is reflective of network activity, and is only tangentially relevant to it’s inherent value.
+
+                <br> <br><b>5. What is the network used for?</b>
+
+                <br> <br>Holochain the framework can be used by developers who wish to write apps where the user data is stored by the network participants themselves and interaction is done on a peer-to-peer, or peer-to-DHT basis.
+
+                <br> <br>If a developer so desired they could build an entirely closed network, accessible only to those running the full application and writing and storing their own records. In this instance there would be no need for HoloFuel to cover hosting costs, since every participant hosts themselves.
+
+                <br> <br>Developers can also appeal for the application to be served by hosts on the Holo network, however since this is done at the discretion of the hosts themselves, they may choose not to host an application if it does not align with one or more of their principles.
+
+                <br> <br><b>6. What are some of the projects running on the network?</b>
+
+                <br> <br>Internet of Energy Network (IOEN) is developing the internet of energy, which is a technology that enables energy consuming devices to transmit their energy usage metrics to a network that integrates this information in ecologically intelligent ways. For example energy use tends to peak around certain times leading to periods of heavy strain on energy grids. IOEN enables devices to shift their operation times slightly out of sync, smoothing out the energy grid demand spikes. Also, excess energy produced in one location can be redistributed and credited to other locations where it would be better used. Only a dynamic network which is able to perform local and global information synchronisation with little workload is capable of co-ordinating such a task in an ecologically sane way, which the Holochain framework provides.
+
+                <br> <br>Volla Systems, A privacy-first mobile phone company with their own Android based OS, Volla is preparing to ship their new Quintus phone this fall with Holochain applications pre-installed.
+
+                <br> <br>Elemental Chat is a distributed alternative to Whatsapp or Slack, which is currently being used to test the Holoport network. A simple concept which is familiar to us all by now, except rather than operating on the massive centralised server farms earlier mentioned, data will be stored on a user-centric basis and in the DHT.
+
+                <br> <br>Sacred Capital, an application that enables reputation interchange between different networks through the use of a transportable profile. In the emerging era of distributed organisations where the barriers between inside and outside are more permeable, the capacity to carry a profile of relevant credentials and reliability from one project to another will be crucial to the next generation web environment.
+
+                <br> <br><b>7. Who is behind it?</b>
+
+                <br> <br>Founded by it’s two lead engineers, Eric Harris-Braun and Arthur Brock, the ICO for HOT (Holo Token) the ERC20 placeholder was held between March and April 2018, though the two have been operating much longer as part of the Metacurrency group with roots that go back to before 2008. Since its incorporation, the Holo Foundation has gone on to employ a diverse team of developers and communicators and through open-sourcing has acquired a community of followers who are educating themselves about and building with the framework.
+
+                <br> <br><b>8. What is the community like?</b>
+
+                <br> <br>By contrasting itself against the design philosophy of traditional Blockchain from the outset, Holo has gained loyal followers, investors and developers. The community has identified and rallied around Holo as an exemplar of the distribution of data and agreements, user-centric design, as well as concern over the energy demands of Blockchain and the emergence of new authorities and capture-targets, such as foundations, miners and validators.
+
+                <br> <br>Because understanding Holochain requires the <em>removal</em> of certain assumptions used in the design of Blockchains, those who take the time to understand it usually become strong advocates of one aspect or another of the Holo enterprise.
+
+                <br> <br><b>9. How secure is the Network?</b>
+
+                <br> <br>It is only possible to make changes that are compliant with the verification rules to one pair of local chains, and not to a global ledger, so the worst that an actor can do is fail to live up to their commitments. If an actor has failed to do so in the past, this will be visible to potential transactors when they audit their chain. All instances of the HoloFuel application proceed by the same validation rules, so all honest actors will be able to identify and decline to interact with bad agents or publish their entries to their DHT.
+
+                <br> <br>Holochain and HoloFuel are not prone to attacks which we see on consensus based ledgers, such as 51% attacks or empty block attacks because there is no single point of vulnerability in the ledger system, such as the cannonical chain being worked on by validators in a Blockchain setting. Instead entries become integral by virtue of their compliance.
+
+                <br> <br>Also Denial-of-Service attacks upon any one network actor would only lead to outages with that particular host, and would not be a problem for the robust Holo network. Because the data in the HoloFuel network is stored on an agent-centric basis there is no honey pot effect of centralised data storage, making large scale data mining unattractive.
+
+                <br> <br>Holochain applications are even capable of splitting the DHT into isolated fragments which do not share data with each other but which still operate with compliance on a ‘local’ level, recombining them at a later date in the event of catastrophic disruptions to global connectivity.
+
+                <br> <br><b>10. What does HoloFuel represent as an investment?</b>
+
+                <br> <br>The service which HoloFuel is backed by is distributed hostage for regular internet users. To put this another way, HoloFuel purchases distributed uptime for users who are not themselves running an application, but accessing it through a third-party server. The Holo network is this third party.
+
+                <br> <br>Because of the extensive scalability and the complexity of the applications that Holochain can support, it represents an alternative frontier distributed ledger tech, which the Blockchain space is still somewhat unaware of. This is due in part to the fact that many of the applications developed thus far are unlike the gamut of ICOs and DeFi apps, most without a token, serving practical non-financial needs in ways that require for a distributed network or enhance their robustness and interoperability.
+
+                <br> <br>It is true that the invention of Holochain exceeds the investment opportunity available in HoloFuel, because in its fullest manifestation, every user would host themselves and the need to purchase hosting-as-a-service would be removed. This however is a long way from reality, and in the interim HoloFuel represents the best way to express the wager that Holochain applications will gain widespread adoption in the future because of their novelty, superior capacities and scalability.
+
+                <br> <br>The fact that there are so many open questions for Holo is testament to the scope of its opportunity.
+
+                <br><br>—
+                <br><br><b>Updates:</b>
+                <br><br><b>Edge Nodes</b> - Edge Nodes are the fulfillment of the pledge that any spare computational capacity can be put to use as a node in hApp networks. These are described as "always-on" nodes which act as a back up for individual human users who often drop on and offline at different times. These Edge Nodes can be built by anyone with a modicum of experience using command prompt terminals and a spare computer that they don't mind being wiped. They store the public data of hApp users so that it is still available for others even if someone is offline.
+                <br><br>
+                <br><br>The author has no affiliation with the Holo team and wrote this article, which may contain errors, for educational purposes.
+
+
+
+
+                  </p>
+
+              </div>
+
+<!--              <div class="tab-content" id="tab2">-->
+<!--                &lt;!&ndash; Content for The Gulf Pivot - Notes (e.g., an iframe with Google Doc) &ndash;&gt;-->
+<!--                  <br>An <a href="https://docs.google.com/document/d/1_HIYV9-b7y_PoslBo7N9Ul2YjYPmn7rwB6MUS017DYE/edit?tab=t.0" target="_blank">evolving chronology</a> of geopolitical events regarding the growing importance of the Gulf Region-->
+<!--              </div>-->
+                  <div class="tab-content" id="tab2">
+  <!-- Content for The Gulf Pivot - Notes - Google Doc -->
+                  <iframe
+                    src="https://docs.google.com/document/d/1_HIYV9-b7y_PoslBo7N9Ul2YjYPmn7rwB6MUS017DYE/preview"
+                    style="width: 100%; height: 800px; border: none; border-radius: 8px;"
+                    allow="clipboard-read; clipboard-write"
+                    allowfullscreen>
+                  </iframe>
+                  </div>
+
+              <div class="tab-content" id="tab3">
+                <!-- Content for Idries Shah Library -->
+                    <a href="https://capable-marzipan-a094af.netlify.app/" target="_blank">
+                    <br>A library app</a> cataloging the published works of Idries Shah.
+                    <br>Every title in the corpus has a navigable table of contents.
+                    <br>Editions are hosted by <a href="https://idriesshahfoundation.org/">The Idries Shah Foundation.</a>
+
+
+
+              </div>
+              <div class="tab-content" id="tab4">
+                <!-- Content for This Website --><a href="https://docs.google.com/document/d/172j5_9zXo9QEy2x2RH-PDOKMvRHaek-OSamzegafLfM/edit?usp=sharing" target="blank">All kinds</a> of work.
+              </div>
+            </div>
+
+
+
+
+<!--<pre class="star">   -->
+<!--                ⠀⠿⣶⣤⣤⣤⣄⣀⣴⣿⡿⢻⣿⡆⠀⠀⠀⠀-->
+<!--    ⠀⠀⠀⠀    ⠀⢀⣼⠀⠀⠀⠹⣿⣟⠿⠿⠿⡿⠋⠀⠘⣿⣇⠀⠀⠀⠀⠀-->
+<!--    ⠀⠀⠀⠀⠀⢳⣶⣶⣿⣿⣇⣀⠀⠀⠙⣿⣆⠀⠀⠀⠀⠀⠀⠛⠿⣿⣦⣤⣀⠀⠀-->
+<!--    ⠀⠀⠀⠀⠀⠀⣹⣿⣿⣿⣿⠿⠋⠁⠀⣹⣿⠳⠀⠀⠀⠀⠀⠀⢀⣠⣽⣿⡿⠟⠃-->
+<!--    ⠀⠀⠀ ⠀⢰⠿⠛⠻⢿⡇⠀⠀⠀⣰⣿⠏⠀⠀ ⠀⠀ ⣾⣿⠟⠋⠁⠀⠀⠀-->
+<!--    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠋⠀⠀⣰⣿⣿⣾⣿⠿⢿⣷⣀⢀⣿⡇⠀⠀⠀⠀⠀-->
+<!--    ⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠋⠉⠁⠀⠀⠀⠀⠙⢿⣿⣿⠇⠀⠀⠀⠀⠀⠀-->
+<!--⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀      ⠙⢿</pre>-->
+
+
+            <a href="webbing.html">
+            <button class="back_button"><img src="logo-v1-cornflower.png" class="logo2"></button>
+            </a>
+
+
+
+    </main>
+<script src="scripts.js"></script>
+</body>
+</html>
