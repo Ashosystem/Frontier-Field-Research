@@ -116,14 +116,78 @@ h1 {
 }*/
 
 /* ===== LOGO - Centered Positioning ===== */
-.logo {
-  width: clamp(45px, 8vw, 55px);  /* Scales with viewport */
+/*.logo {
+  width: clamp(45px, 8vw, 55px);
   height: clamp(45px, 8vw, 55px);
   position: absolute;
   top: 48%;
   left: 38.5%;
-  transform: translate(-50%, -50%);  /* Centers perfectly on all screens */
+  transform: translate(-50%, -50%);
+}*/
+
+/* ===== LOGO POSITIONING - Mobile vs Desktop ===== */
+
+/* DESKTOP (769px+) - Logo positioned to the left of "Research" text */
+@media (min-width: 769px) {
+  .logo {
+    width: clamp(45px, 8vw, 55px);
+    height: clamp(45px, 8vw, 55px);
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    z-index: 50;
+  }
 }
+
+/* TABLET (481px - 768px) - Slightly adjusted for tablet spacing */
+@media (min-width: 481px) and (max-width: 768px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 65px;  /* Positioned below h1 line */
+    left: 15px;
+    transform: none;
+    z-index: 50;
+  }
+}
+
+/* MOBILE (max-width: 480px) - Repositioned below heading, left-aligned */
+@media (max-width: 480px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+    position: static;  /* Takes normal document flow */
+    display: block;
+    margin: 10px auto 15px 0;  /* Top, auto horizontal, bottom, 0 right */
+    z-index: 50;
+    float: left;  /* Float left to position beside text */
+    margin-right: 10px;
+  }
+
+  /* Adjust menu to accommodate floated logo */
+  .menu {
+    position: relative;
+    overflow: auto;  /* Contain the floated logo */
+    padding-top: 0;  /* Remove top padding since logo is in flow */
+  }
+
+  /* Ensure h1 text wraps around logo */
+  h1 {
+    overflow: auto;  /* Prevent overlap with floated logo */
+  }
+}
+
+/* Extra small phones (< 380px) - Even more compact */
+@media (max-width: 380px) {
+  .logo {
+    width: 35px;
+    height: 35px;
+    margin: 5px auto 10px 0;
+  }
+}
+
 
 .logo2{
     width: 50px;
@@ -304,7 +368,7 @@ h1 {
 }
 
 .tab-content.scrollable {
-    max-height: 600px;
+    max-height: 1000px;
     overflow-y: scroll;
     padding-right: 15px; /* Account for scrollbar */
 }
@@ -318,13 +382,44 @@ h1 {
     background-color: rgb(243, 243, 243)
 }*/
 
-#tab1.tab-content.active {
+/*#tab1.tab-content.active {
   padding: clamp(15px, 4vw, 30px);
   width: 100%;
   box-sizing: border-box;
   margin: 0;
   display: block;
   background-color: rgb(243, 243, 243);
+}*/
+
+#tab1.tab-content.active {
+padding: clamp(15px, 4vw, 30px);
+width: 100%;
+box-sizing: border-box;
+margin: 0;
+display: block;
+background-color: rgb(243, 243, 243);
+min-height: 70vh; /* NEW - Fills screen on mobile */
+max-height: none; /* NEW - Allows content to scroll */
+}
+
+/* ===== TAB2 - EMBEDDED CONTENT (Google Docs, iframes) ===== */
+#tab2.tab-content.active {
+padding: 0;
+width: 85%;
+box-sizing: border-box;
+margin: 0;
+display: block;
+
+min-height: 70vh; /* Fills screen on mobile */
+}
+
+/* Make all iframes fill their containers on mobile */
+#tab2.tab-content.active iframe {
+width: 100% !important;
+height: 80vh !important;
+border: none;
+display: block;
+background-color: LightGrey;
 }
 
 @keyframes fadeIn {
@@ -374,7 +469,24 @@ h1 {
   }
 
   .tab-content.active {
-    padding: 15px;
+  padding: 15px;
+  min-height: 70vh; /* NEW */
+  }
+
+  #tab1.tab-content.active {
+  padding: 15px;
+  min-height: 70vh; /* NEW */
+  max-height: 70vh; /* NEW */
+  overflow-y: auto; /* NEW */
+  }
+
+  #tab2.tab-content.active {
+  padding: 0; /* NEW */
+  min-height: 70vh; /* NEW */
+  }
+
+  #tab2.tab-content.active iframe {
+  height: 70vh !important; /* NEW */
   }
 
   .tab-list {
