@@ -432,13 +432,12 @@ background-color: LightGrey;
 /* Extra small phones (< 480px) */
 @media (max-width: 479px) {
   .menu {
-    margin: 15px auto;
-    padding: 0px;
+    margin: 10px auto;
   }
 
   h1 {
     font-size: 22px;
-    padding: 5px;
+    padding: 2px;
   }
 
   .heading {
