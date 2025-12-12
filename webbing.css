@@ -2,65 +2,127 @@ body {
    background-color: Gainsboro;
 }
 
-.menu {
+/*.menu {
     background-color: CornflowerBlue;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    /* Replace border with outline */
     outline: 2px solid darkGrey;
-    outline-offset: -1px; /* Puts it inside without affecting size */
+    outline-offset: -1px; /* Puts it inside without affecting size
+}*/
+
+/* ===== MENU - Mobile First ===== */
+.menu {
+  background-color: CornflowerBlue;
+  width: min(95%, 900px);  /* 95% on mobile, max 900px on desktop */
+  margin: 20px auto;
+  position: relative;
+  outline: 2px solid darkGrey;
+  outline-offset: -1px;
 }
 
-h1 {
+/*h1 {
   text-align: center;
   font-family: "Lucida Console", monospace;
   font-style: Italic;
   font-size: 30px;
   position: relative;
   padding-top: 3px;
+}*/
+
+/* ===== HEADINGS - Responsive Font Sizes ===== */
+h1 {
+  text-align: center;
+  font-family: "Lucida Console", monospace;
+  font-style: Italic;
+  font-size: clamp(20px, 5vw, 30px);  /* Scales with screen */
+  position: relative;
+  padding-top: 3px;
+  margin: 15px 0;
 }
 
-.heading {
+/*.heading {
     font-family: "Lucida Console", monospace;
     font-size: 29px;
     text-indent: 20px;
 
+}*/
+
+.heading {
+  font-family: "Lucida Console", monospace;
+  font-size: clamp(18px, 4vw, 29px);
+  text-indent: clamp(10px, 3vw, 20px);
+  margin: 15px 0;
 }
 
-.epigraph {
+/*.epigraph {
     text-align: center;
     font-family: "Lucida Console", monospace;
     font-size: 25px;
     text-indent: 20px;
+}*/
+
+.epigraph {
+  text-align: center;
+  font-family: "Lucida Console", monospace;
+  font-size: clamp(18px, 4vw, 25px);
+  text-indent: clamp(10px, 3vw, 20px);
+  margin: 15px 0;
 }
 
-.circa {
+/*.circa {
     text-align: center;
     font-family: "Lucida Console", monospace;
     font-size: 15px;
+}*/
+
+.circa {
+  text-align: center;
+  font-family: "Lucida Console", monospace;
+  font-size: clamp(12px, 2.5vw, 15px);
+  margin: 10px 0;
 }
 
-.frontispiece{
+/*.frontispiece{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 /*    opacity: 0.09;
     transition: opacity 0.6s ease;*/
+/* } */
+
+/* ===== IMAGES - Responsive Sizing ===== */
+.frontispiece {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: min(90%, 500px);  /* Scales on mobile, caps at 500px */
+  height: auto;
+  transition: opacity 0.6s ease;
 }
 
 .frontispiece:hover {
   opacity: 1;
 }
 
-.logo{
+/*.logo{
     width: 55px;
     height: 55px;
     position: absolute;
     left: 295px;
     top: 18px;
+}*/
+
+/* ===== LOGO - Centered Positioning ===== */
+.logo {
+  width: clamp(45px, 8vw, 55px);  /* Scales with viewport */
+  height: clamp(45px, 8vw, 55px);
+  position: absolute;
+  top: 48%;
+  left: 38.5%;
+  transform: translate(-50%, -50%);  /* Centers perfectly on all screens */
 }
 
 .logo2{
@@ -71,29 +133,51 @@ h1 {
     bottom: 18px; */
 }
 
-.description {
+/*.description {
     font-family: "Lucida Console";
     width: 85%;
     margin-left: 35px;
     margin-right: auto;
 
+}*/
+
+/* ===== DESCRIPTION TEXT - Responsive Padding ===== */
+.description {
+  font-family: "Lucida Console";
+  width: min(95%, 800px);
+  padding: clamp(15px, 4vw, 30px);
+  margin: 20px auto;
 }
 
 .buttons {
     text-align: center;
-    font-family: "Lucida"
+    font-family: "Lucida";
 }
 
-.button2 {
+/*.button2 {
     position: fixed;
     left: 20px;
-    }
+    }*/
 
-.back_button {
+.button2 {
+  position: fixed;
+  left: clamp(10px, 3vw, 20px);  /* Responsive distance from edge */
+  z-index: 100;
+}
+
+/*.back_button {
     position: fixed;
     bottom: 20px;
     left:20px;
     background-color: CornflowerBlue;
+}*/
+
+.back_button {
+  position: fixed;
+  bottom: clamp(10px, 3vw, 20px);
+  left: clamp(10px, 3vw, 20px);
+  background-color: CornflowerBlue;
+  z-index: 100;
 }
 
 .portfolio_button {
@@ -121,12 +205,19 @@ h1 {
     margin-left: 50px;
 }
 
+/*.tab-list {
+  display: flex;
+  border-bottom: 2px solid #6495ED;
+}*/
+
+/* ===== TABS - Responsive Layout ===== */
 .tab-list {
   display: flex;
+  flex-wrap: wrap;  /* Wraps on small screens */
   border-bottom: 2px solid #6495ED;
 }
 
-.tab {
+/*.tab {
 
   border: none;
   color: #4169E1;
@@ -137,6 +228,20 @@ h1 {
   cursor: pointer;
   outline: none;
   transition: background 0.2s;
+}*/
+
+.tab {
+  border: none;
+  color: #4169E1;
+  background-color: LightGrey;
+  font-family: "Lucida Console";
+  font-size: clamp(12px, 2.5vw, 18px);
+  padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 24px);
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+  flex: 1;
+  min-width: 80px;
 }
 
 .tab.active {
@@ -150,16 +255,26 @@ h1 {
   color: white;
 }
 
-.tab-content {
+/*.tab-content {
   border: 5px;
   border-color: CornflowerBlue;
   display: none;
   padding: 24px;
   animation: fadeIn 0.3s ease;
   font-family: "Lucida Console";
+}*/
+
+/* ===== TAB CONTENT ===== */
+.tab-content {
+  border: 5px;
+  border-color: CornflowerBlue;
+  display: none;
+  padding: clamp(15px, 4vw, 24px);
+  animation: fadeIn 0.3s ease;
+  font-family: "Lucida Console";
 }
 
-.tab-content.active {
+/*.tab-content.active {
   display: block;
   padding-left: 75px;
   width: 1000px;
@@ -170,9 +285,18 @@ h1 {
 
   border-top: none;
 
+}*/
+
+.tab-content.active {
+  display: block;
+  width: 80%;
+  box-sizing: border-box;
+  background-color: LightGrey;
+  border: 2px dashed;
+  border-color: CornflowerBlue;
+  border-left: none;
+  border-top: none;
 }
-
-
 
 .tab-container {
   border: 5px;
@@ -185,17 +309,171 @@ h1 {
     padding-right: 15px; /* Account for scrollbar */
 }
 
-#tab1.tab-content.active {
-    padding-left: 0;              /* Remove left padding */
-    width: 65%;                   /* Make it wider */
-    margin-left: auto;            /* Center horizontally */
+/*#tab1.tab-content.active {
+    padding-left: 0;
+    width: 65%;
+    margin-left: auto;
     margin-right: auto;
     display: block;
     background-color: rgb(243, 243, 243)
+}*/
+
+#tab1.tab-content.active {
+  padding: clamp(15px, 4vw, 30px);
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  display: block;
+  background-color: rgb(243, 243, 243);
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px);}
   to   { opacity: 1; transform: translateY(0);}
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Extra small phones (< 480px) */
+@media (max-width: 479px) {
+  .menu {
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .heading {
+    font-size: 16px;
+    text-indent: 10px;
+  }
+
+  .epigraph {
+    font-size: 16px;
+  }
+
+  .description {
+    width: 95%;
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .filigree-border {
+    width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .tab {
+    font-size: 12px;
+    padding: 8px 10px;
+    flex: 1 1 50%;  /* 2 tabs per row on very small screens */
+  }
+
+  .tab-content.active {
+    padding: 15px;
+  }
+
+  .tab-list {
+    gap: 2px;
+  }
+}
+
+/* Small tablets (480px - 768px) */
+@media (min-width: 480px) and (max-width: 768px) {
+  .menu {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .description {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .filigree-border {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .frontispiece {
+    width: min(85%, 450px);
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .tab-content.active {
+    padding: 20px;
+  }
+
+  #tab1.tab-content.active {
+    padding: 20px;
+  }
+}
+
+/* Tablets and larger (769px+) */
+@media (min-width: 769px) {
+  .menu {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .description {
+    width: 85%;
+    margin-left: 35px;
+    margin-right: auto;
+  }
+
+  .filigree-border {
+    width: 85%;
+  }
+
+  .frontispiece {
+    width: 50%;
+  }
+
+  .tab {
+    font-size: 18px;
+    padding: 12px 24px;
+    flex: 0 1 auto;  /* Don't force flex on desktop */
+  }
+
+  .tab-content.active {
+    padding: 30px;
+    padding-left: 75px;
+  }
+
+  #tab1.tab-content.active {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+}
+
+/* Large desktop (1024px+) */
+@media (min-width: 1024px) {
+  .menu {
+    width: 60%;
+  }
+
+  .description {
+    width: 85%;
+  }
 }
 
